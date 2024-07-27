@@ -32,6 +32,7 @@ ASMFLAGS = --prefix _
 
 # Where to install. Default is /usr/lib
 INSTDIR = /usr/lib
+INCDIR = /usr/include
 
 # Let gcc set up the linker
 CC = gcc
@@ -57,6 +58,8 @@ install: libAlong32.so
 	@if [ -d $(INSTDIR) ]; \
 	    then \
 	    cp libAlong32.so $(INSTDIR);\
+	    cp libAlong32.a $(INSTDIR);\
+	    cp ../Along32.inc $(INCDIR);\
 	    chmod a+x $(INSTDIR)/libAlong32.so;\
 	    echo "Installed in $(INSTDIR)";\
 	 else \
@@ -67,6 +70,8 @@ uninstall:
 	@if [ -d $(INSTDIR) ]; \
 	    then \
 	    rm $(INSTDIR)/libAlong32.so;\
+	    rm $(INSTDIR)/libAlong32.a;\
+	    rm $(INCDIR)/Along32.inc;\
 	    echo "Uninstalling finished";\
 	 else \
 	    echo "Sorry, $(INSTDIR) does not exist";\
