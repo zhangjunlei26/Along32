@@ -37,9 +37,9 @@ INSTDIR = /usr/lib
 CC = gcc
 
 # Share libbrary option for linker
-CFLAGS = -m32 -read_only_relocs suppress
+CFLAGS = -m32 -shared -fPIC
 
-all: libAlong32.a
+all: libAlong32.a libAlong32.so
 
 libAlong32.a: Along32.o
 	ar rcs libAlong32.a Along32.o
