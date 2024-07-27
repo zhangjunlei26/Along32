@@ -25,7 +25,7 @@
 ASM = nasm
 
 # Format of object file is linux
-OBJECT_FORMAT = macho
+OBJECT_FORMAT = elf32
 
 # Flags used in assemblying phase
 ASMFLAGS = --prefix _
